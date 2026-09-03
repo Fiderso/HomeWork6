@@ -39,15 +39,15 @@ public class Main {
         int deliveryDays = 1;
         if (deliveryDistance >= 100) {
             System.out.println("Доставка недоступна");
-            return;
-        }
-        if (deliveryDistance >= 20) {
-            deliveryDays++;
-        }
-        if (deliveryDistance >= 60) {
-            deliveryDays++;
-        }
+        } else if (deliveryDistance > 60) {
+            deliveryDays += 2;
             System.out.println("Потребуется дней: " + deliveryDays);
+        } else if (deliveryDistance > 20) {
+            deliveryDays += 1;
+            System.out.println("Потребуется дней: " + deliveryDays);
+        } else {
+            System.out.println("Потребуется дней: " + deliveryDays);
+        }
 
         System.out.println();
 
